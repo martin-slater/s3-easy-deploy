@@ -71,7 +71,7 @@ function startDeploy() {
 
 function getFiles() {
     return new Promise((resolve, reject) => {
-        new Glob('**/*.*', { cwd: config.publicRoot }, (err, files) => {
+        new Glob('**/*.*', { cwd: config.publicRoot, dot: true }, (err, files) => {
             if (err) {
                 return reject(err);
             }
